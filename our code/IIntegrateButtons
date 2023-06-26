@@ -1,0 +1,187 @@
+package Portfolio;
+
+import java.awt.EventQueue;
+import java.awt.Image;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import Portfolio2.MyFrame;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import Portfolio3.Main;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+public class IIntegrateButtons extends JFrame {
+	
+	 private ImageIcon profile1 = new ImageIcon(
+	            new ImageIcon("C:\\Users\\Windows 10\\eclipse-workspace\\mainOOPproject\\src\\asset\\maria.png")
+	                    .getImage().getScaledInstance(173, 184, Image.SCALE_DEFAULT));
+	 private ImageIcon profile2 = new ImageIcon(
+	            new ImageIcon("C:\\Users\\Windows 10\\eclipse-workspace\\mainOOPproject\\src\\asset\\raine.png")
+	                    .getImage().getScaledInstance(173, 184, Image.SCALE_DEFAULT));
+	 private ImageIcon profile3 = new ImageIcon(
+	            new ImageIcon("C:\\Users\\Windows 10\\eclipse-workspace\\mainOOPproject\\src\\asset\\migs.png")
+	                    .getImage().getScaledInstance(173, 184, Image.SCALE_DEFAULT));
+	 private ImageIcon exiticons = new ImageIcon(
+	            new ImageIcon("C:\\\\Users\\\\Windows 10\\\\Downloads\\\\Portfolio-main\\\\Portfolio-main\\\\src\\\\logout.png")
+	                    .getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT));
+
+	 
+	 
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					IIntegrateButtons frame = new IIntegrateButtons();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public IIntegrateButtons() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1280, 720);
+		setTitle("Our Portfolio");
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel MainPanel = new JPanel();
+		MainPanel.setBackground(new Color(0, 0, 0));
+		MainPanel.setBounds(0, 0, 1264, 681);
+		contentPane.add(MainPanel);
+		MainPanel.setLayout(null);
+		
+		JLabel mariaLbl = new JLabel("");
+		mariaLbl.addMouseListener(new MouseAdapter() {
+			
+			@Override
+	        public void mouseEntered(MouseEvent e) {
+	        	mariaLbl.setLocation(mariaLbl.getX(), mariaLbl.getY() - 60);
+	        }
+
+	        @Override
+	        public void mouseExited(MouseEvent e) {
+	        	mariaLbl.setLocation(mariaLbl.getX(), mariaLbl.getY() + 60);
+	        }
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Main portfolio3 = new Main();
+				portfolio3.setVisible(true);
+				dispose();
+				
+			}
+		});
+		mariaLbl.setIcon(profile1);
+		mariaLbl.setBounds(268, 247, 173, 184);
+		MainPanel.add(mariaLbl);
+		
+		JLabel raineLbl = new JLabel("");
+		raineLbl.setIcon(profile2);
+		raineLbl.addMouseListener(new MouseAdapter() {
+			
+			@Override
+	        public void mouseEntered(MouseEvent e) {
+				raineLbl.setLocation(raineLbl.getX(), raineLbl.getY() - 60);
+	        }
+
+	        @Override
+	        public void mouseExited(MouseEvent e) {
+	        	raineLbl.setLocation(raineLbl.getX(), raineLbl.getY() + 60);
+	        }
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MyFrame portfolio2 = new MyFrame();
+				portfolio2.setVisible(true);
+				dispose();
+				
+			}
+		});
+		raineLbl.setBounds(548, 247, 173, 184);
+		MainPanel.add(raineLbl);
+		
+		JLabel migsLbl = new JLabel("");
+		migsLbl.setIcon(profile3);
+		migsLbl.addMouseListener(new MouseAdapter() {
+			
+			@Override
+	        public void mouseEntered(MouseEvent e) {
+				migsLbl.setLocation(migsLbl.getX(), migsLbl.getY() - 60);
+	        }
+
+	        @Override
+	        public void mouseExited(MouseEvent e) {
+	        	migsLbl.setLocation(migsLbl.getX(), migsLbl.getY() + 60);
+	        }
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				MyPortfolioFrame portfolio1 = new MyPortfolioFrame();
+				portfolio1.setVisible(true);
+				dispose();
+				
+			}
+		});
+		migsLbl.setBounds(833, 247, 173, 184);
+		MainPanel.add(migsLbl);
+		
+		JLabel lblMariaBea = new JLabel("Maria Bea");
+		lblMariaBea.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		lblMariaBea.setForeground(new Color(192, 192, 192));
+		lblMariaBea.setBounds(283, 490, 175, 46);
+		MainPanel.add(lblMariaBea);
+		
+		JLabel lblRaine = new JLabel("Raine");
+		lblRaine.setForeground(Color.LIGHT_GRAY);
+		lblRaine.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		lblRaine.setBounds(582, 490, 139, 46);
+		MainPanel.add(lblRaine);
+		
+		JLabel lblMiguel = new JLabel("Miguel");
+		lblMiguel.setForeground(Color.LIGHT_GRAY);
+		lblMiguel.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		lblMiguel.setBounds(867, 490, 139, 46);
+		MainPanel.add(lblMiguel);
+		
+		JLabel lblTitle = new JLabel("Portfolio");
+		lblTitle.setFont(new Font("Tahoma", Font.PLAIN, 99));
+		lblTitle.setForeground(new Color(255, 255, 255));
+		lblTitle.setBounds(452, 50, 396, 127);
+		MainPanel.add(lblTitle);
+		
+		JLabel lblExit = new JLabel(" ");
+		lblExit.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (JOptionPane.showConfirmDialog(null, "Are you sure you want to close this application?", "Confirm", JOptionPane.YES_NO_OPTION) == 0) {
+					 System.exit(0);
+					
+					 }
+				
+			}
+		});
+		lblExit.setIcon(exiticons);
+		lblExit.setBounds(1217, 11, 37, 37);
+		MainPanel.add(lblExit);
+	}
+}
